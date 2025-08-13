@@ -1,7 +1,7 @@
 # Next Blog – Plug-and-Play Next.js Blog Feature
 
 A plug-and-play Next.js blog feature for instant integration into any Next.js project.  
-Easily set up a `/blog` route with PostgreSQL backend, Tailwind CSS styling, and public assets using a single command.
+Easily set up a `/blog` route with PostgreSQL backend, Tailwind CSS styling, JWT authentication, and public assets using a single command.
 
 ---
 
@@ -10,8 +10,10 @@ Easily set up a `/blog` route with PostgreSQL backend, Tailwind CSS styling, and
 - **Instant `/blog` route**: All pages, components, and API routes are set up for you.
 - **PostgreSQL backend**: Automatic schema creation and ready-to-use CRUD endpoints.
 - **Tailwind CSS**: Modern styling out of the box.
+- **JWT Authentication**: Secure endpoints with JWT.
 - **Public assets**: Images and SVGs included.
 - **No root file conflicts**: Does not overwrite your existing `layout.js` or `page.js`.
+- **Components folder**: All blog components are available in `/components/blog`.
 
 ---
 
@@ -29,6 +31,11 @@ Then
 npx next-blog init
 ```
 
+> **Notice:**  
+> For best results, test this package with a fresh Next.js project created using  
+> `npx create-next-app` and select the Tailwind CSS option during setup.  
+> This ensures all required dependencies and configuration are ready for the feature
+
 - By default, this copies the blog feature into your project's `app` or `src/app` folder (auto-detected).
 - To force a specific target, use:
   - `npx next-blog init --app` (for `/app`)
@@ -36,10 +43,12 @@ npx next-blog init
 
 ### 2. What Gets Added
 
-- `/app/blog` or `/src/app/blog` – Blog pages and components
+- `/app/blog` or `/src/app/blog` – Blog pages
 - `/app/api/blog-posts` – API routes for blog CRUD
+- `/app/api/auth` – Authentication API routes
 - `/app/styles` – Blog and global CSS
 - `/app/lib` – Database connection
+- `/components/blog` – Blog components
 - `/public` – Blog assets (images, SVGs, etc.)
 
 ### 3. Required Dependencies
@@ -48,13 +57,15 @@ When you install the package, these dependencies are automatically installed:
 
 - `pg` (PostgreSQL client)
 - `tailwindcss`, `postcss`, `autoprefixer` (for styling)
+- `jsonwebtoken` (for JWT authentication)
 
-### 4. Database Setup
+### 4. Environment Setup
 
-Set your PostgreSQL connection string in your environment:
+Set your PostgreSQL connection string and JWT secret in your environment:
 
 ```env
 DATABASE_URL=postgres://user:password@host:port/database
+JWT_SECRET=your_super_secret_jwt_key
 ```
 
 The schema is created automatically on first run.
@@ -67,9 +78,9 @@ Visit `/blog` in your Next.js project to see your new blog in action!
 
 ## Customization
 
-- Edit `/blog/page.jsx` and components in `/blog` and `/components` as needed.
+- Edit `/blog/page.jsx` and components in `/blog` and `/components/blog` as needed.
 - Add or modify assets in `/public`.
-- API routes are in `/api/blog-posts`.
+- API routes are in `/api/blog-posts` and `/api/auth`.
 
 ---
 
@@ -82,7 +93,7 @@ Visit `/blog` in your Next.js project to see your new blog in action!
 
 ## Uninstall
 
-To remove, simply delete the `/blog`, `/api/blog-posts`, `/styles`, `/lib`, and any assets added to `/public`.
+To remove, simply delete the `/blog`, `/api/blog-posts`, `/api/auth`, `/styles`, `/lib`, `/components/blog`, and any assets added to `/public`.
 
 ---
 
@@ -94,4 +105,5 @@ MIT
 
 ## Author
 
-name.Random()
+name.Randome()
+
