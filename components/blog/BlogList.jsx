@@ -1,6 +1,7 @@
 import Blog from "./Blog";
-
+import blogs from "../components/data/data"
 export default function BlogList({ posts }) {
+  console.log(blogs);
   return (
     <div className="md:w-[80%] w-[90%] mt-20 sm:px-15 px-2">
       <div className="flex items-center justify-between py-2">
@@ -10,7 +11,10 @@ export default function BlogList({ posts }) {
         </button>
       </div>
       <div className="mt-10 space-y-8">
-        {posts?.map((post, index) => (
+        
+        {posts.length == 0 ? blogs.map((post, index) => (
+          <Blog key={index} post={post} />
+        )) : posts.map((post, index) => (
           <Blog key={index} post={post} />
         ))}
       </div>

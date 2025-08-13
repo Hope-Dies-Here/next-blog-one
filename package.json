@@ -1,6 +1,6 @@
 {
   "name": "@hope-dies-here/next-blog-one",
-  "version": "1.1.8",
+  "version": "1.2.1",
   "description": "A plug-and-play Next.js blog feature for easy integration via npx.",
   "main": "bin/init.js",
   "bin": {
