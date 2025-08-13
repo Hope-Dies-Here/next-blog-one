@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Afacad:ital,wght@0,400..700;1,400..700&display=swap');
+@import "tailwindcss";
+
+:root {
+  --background: #0E0416;
+  --foreground: #ededed;
+  --font-primary: #B356F4;
+  --font-primary-light: #DCAEFD;
+  --font-light: #ffffff;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0E0416;
+    --foreground: #ededed;
+  }
+}
+
+body {
+
+  
+  background: var(--background);
+  color: var(--foreground);
+  font-family: "Afacad", sans-serif;
+}
+
+.text-primary {
+  color: var(--font-primary);
+}
+
+.text-primary-light {
+  color: var(--font-primary-light);
+}
+
+.text-light {
+  color: var(--font-light);
+}
+.home-page-box {
+    
+  background-color: #51286D;  
+}

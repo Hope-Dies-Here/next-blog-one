@@ -1,0 +1,36 @@
+{
+  "name": "@hope-dies-here/next-blog-one",
+  "version": "1.1.8",
+  "description": "A plug-and-play Next.js blog feature for easy integration via npx.",
+  "main": "bin/init.js",
+  "bin": {
+    "next-blog": "./bin/init.js"
+  },
+  "files": [
+    "bin",
+    "blog",
+    "styles",
+    "api",
+    "lib",
+    "public",
+    "components",
+    "auth",
+    "utils"
+  ],
+  "keywords": [
+    "nextjs",
+    "blog",
+    "plugin",
+    "npx",
+    "feature"
+  ],
+  "author": "name.Random()",
+  "license": "MIT",
+  "dependencies": {
+    "pg": "^8.11.3",
+    "tailwindcss": "^3.4.3",
+    "postcss": "^8.4.35",
+    "autoprefixer": "^10.4.16",
+    "jsonwebtoken": "^9.0.2"
+  }
+}
